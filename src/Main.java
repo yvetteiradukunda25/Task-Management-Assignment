@@ -3,13 +3,11 @@ public class Main {
         TaskManager manager = new TaskManager();
 
         try {
-            System.out.println("--- Task Manager ---");
+            manager.addTask("Go to Market");
+            manager.addTask("Learning Python and java");
+            manager.addTask("Do some exxercises");
 
-            manager.addTask("Buy milk");
-            manager.addTask("Study Java");
-            manager.addTask("Exercise");
-
-            System.out.println("\nAll Tasks: " + manager.getAllTasks());
+            System.out.println(manager.getAllTasks());
 
             manager.sortTasks();
             System.out.println("Sorted Tasks: " + manager.getAllTasks());
@@ -39,7 +37,6 @@ public class Main {
             }
 
             // Testing invalid inputs
-            System.out.println("\n--- Invalid Input Tests ---");
             try {
                 manager.addTask(null);
             } catch (IllegalArgumentException e) {
@@ -66,8 +63,7 @@ public class Main {
             }
 
         } finally {
-            System.out.println("\n--- Finally Block ---");
-            System.out.println("Task Manager operations complete.");
+            System.out.println("All operations complete.");
         }
     }
 }

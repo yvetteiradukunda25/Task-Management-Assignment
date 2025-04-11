@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+//thi is a custom exception,
+// it indicates when a search/removal operation fails because the task doesn't exist.
 class TaskNotFoundException extends Exception {
     public TaskNotFoundException(String message) {
         super(message);
     }
 }
-
+// our class is called TaskManager
 class TaskManager {
     private List<String> tasks = new ArrayList<>();
 
@@ -25,7 +26,7 @@ class TaskManager {
 
     public void sortTasks() {
         Collections.sort(tasks);
-        System.out.println("Tasks sorted.");
+        System.out.println("Tasks are already sorted.");
     }
 
     public int searchTask(String task) throws TaskNotFoundException {
