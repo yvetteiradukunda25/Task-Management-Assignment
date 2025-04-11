@@ -21,6 +21,7 @@ class TaskManager {
     }
 
     public List<String> getAllTasks() {
+
         return new ArrayList<>(tasks);
     }
 
@@ -31,7 +32,7 @@ class TaskManager {
 
     public int searchTask(String task) throws TaskNotFoundException {
         if (task == null || task.trim().isEmpty()) {
-            throw new IllegalArgumentException("Search term cannot be empty.");
+            throw new IllegalArgumentException("This cannot be empty.");
         }
         int index = tasks.indexOf(task.trim());
         if (index == -1) {
@@ -42,7 +43,7 @@ class TaskManager {
 
     public void removeTask(String task) throws TaskNotFoundException {
         if (task == null || task.trim().isEmpty()) {
-            throw new IllegalArgumentException("Task to remove cannot be empty.");
+            throw new IllegalArgumentException("removal cannot be empty.");
         }
         if (!tasks.remove(task.trim())) {
             throw new TaskNotFoundException("Task '" + task.trim() + "' not found for removal.");

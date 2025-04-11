@@ -35,7 +35,7 @@ public class Main {
 
             try {
                 System.out.println("Task at index 0: " + manager.getTaskByIndex(0));
-                manager.getTaskByIndex(2);
+                manager.getTaskByIndex(5);
                 // manager.getTaskByIndex(5); Will throw IndexOutOfBoundsException
                 // because it is invalid index
             } catch (IndexOutOfBoundsException e) {
