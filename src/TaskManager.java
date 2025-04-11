@@ -14,7 +14,7 @@ class TaskManager {
 
     public void addTask(String task) {
         if (task == null || task.trim().isEmpty()) {
-            throw new IllegalArgumentException("Task cannot be empty.");
+            throw new IllegalArgumentException("Task cannot be empty."); // put task to check
         }
         tasks.add(task.trim());
         System.out.println("Added: " + task.trim());
@@ -27,7 +27,7 @@ class TaskManager {
 
     public void sortTasks() {
         Collections.sort(tasks);
-        System.out.println("Tasks are already sorted.");
+        System.out.println("Tasks are already sorted.");//
     }
 
     public int searchTask(String task) throws TaskNotFoundException {

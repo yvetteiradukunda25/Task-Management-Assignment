@@ -18,7 +18,7 @@ public class Main {
             try {
                 System.out.println("Found 'Learning Python and java' at index: " + manager.searchTask("Study Java"));
                 manager.searchTask("Read a book");
-                // Will throw TaskNotFoundException
+                // Will throw TaskNotFoundException,
             } catch (TaskNotFoundException e) {
                 System.err.println("Error: " + e.getMessage());
             }
@@ -37,7 +37,7 @@ public class Main {
                 System.out.println("Task at index 0: " + manager.getTaskByIndex(0));
                 manager.getTaskByIndex(5);
                 // manager.getTaskByIndex(5); Will throw IndexOutOfBoundsException
-                // because it is invalid index
+                // because it is invalid index, try to be one of the tasks above and check
             } catch (IndexOutOfBoundsException e) {
                 System.err.println("Error: " + e.getMessage());
             }
