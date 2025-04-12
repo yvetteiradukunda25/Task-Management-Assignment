@@ -21,14 +21,14 @@ class TaskManager {
         tasks.add(task.trim()); //.trim() is a method used to remove whitespace
         System.out.println(task.trim());
     }
-
+      //this method will return all tasks entered
     public List<String> getAllTasks() {
 
         return new ArrayList<>(tasks);
     }
        //this is a method to sort to tasks
     public void sortTasks() {
-        Collections.sort(tasks);
+        Collections.sort(tasks);//Collections.sort, is a method used to sort the elements of a List
     }
           //this is a method to search for a specific tasks
     public int searchTask(String task) throws TaskNotFoundException {
@@ -46,10 +46,11 @@ class TaskManager {
         if (task == null || task.trim().isEmpty()) {
             throw new IllegalArgumentException("removal cannot be empty.");
         }
-        if (!tasks.remove(task.trim())) {
+        // if there is no task for removal, the system will throw 'TaskNotFoundException'
+        if (!tasks.remove(task.trim())) {// this is when you didn't enter any task
             throw new TaskNotFoundException("Task '" + task.trim() + "' not found for removal.");
         }
-         System.out.println("Removed: " + task.trim());
+         System.out.println("Removed: " + task.trim()); //this will show a task removed
     }
        //this is method finds the longest task but if the task is empty, an error will be displayed
     public String findLongestTask() {
