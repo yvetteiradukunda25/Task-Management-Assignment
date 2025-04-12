@@ -13,10 +13,12 @@ class TaskManager {
     private List<String> tasks = new ArrayList<>();
 
     public void addTask(String task) {
+        //.trim().isEmpty() is a method handles cases where the user enters only whitespace or a null string as a task.
+
         if (task == null || task.trim().isEmpty()) {
-            throw new IllegalArgumentException("Task cannot be empty."); // put task to check
+            throw new IllegalArgumentException("Task cannot be empty."); // put a task to check
         }
-        tasks.add(task.trim());
+        tasks.add(task.trim()); //.trim() is a method used to remove whitespace
         System.out.println("Added: " + task.trim());
     }
 
@@ -48,7 +50,7 @@ class TaskManager {
         if (!tasks.remove(task.trim())) {
             throw new TaskNotFoundException("Task '" + task.trim() + "' not found for removal.");
         }
-        System.out.println("Removed: " + task.trim());
+         System.out.println("Removed: " + task.trim());
     }
 
     public String findLongestTask() {

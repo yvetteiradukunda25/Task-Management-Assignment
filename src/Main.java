@@ -16,60 +16,49 @@ public class Main {
             System.out.println("Sorted Tasks: " + manager.getAllTasks());
 
             try {
-                System.out.println("Found 'Learning Python and java' at index: " + manager.searchTask("Study Java"));
-                manager.searchTask("Read a book");
+                System.out.println("Found 'Learning Python and java' at index: " + manager.searchTask("Learning Python and java"));
+                manager.searchTask("Study python");
                 // Will throw TaskNotFoundException,
             } catch (TaskNotFoundException e) {
                 System.err.println("Error: " + e.getMessage());
             }
 
-            try {
-                manager.removeTask("Go to Market");
+            try {manager.removeTask("Go to Market");
                 System.out.println("Tasks after removal: " + manager.getAllTasks());
                 manager.removeTask("Clean room"); // Will throw TaskNotFoundException
-            } catch (TaskNotFoundException e) {
-                System.err.println("Error: " + e.getMessage());
+            } catch (TaskNotFoundException e) {System.err.println("Error: " + e.getMessage());
             }
-
             System.out.println("\nLongest Task: " + manager.findLongestTask());
 
-            try {
-                System.out.println("Task at index 0: " + manager.getTaskByIndex(0));
+            try {System.out.println("Task at index 0: " + manager.getTaskByIndex(0));
                 manager.getTaskByIndex(5);
                 // manager.getTaskByIndex(5); Will throw IndexOutOfBoundsException
                 // because it is invalid index, try to be one of the tasks above and check
-            } catch (IndexOutOfBoundsException e) {
-                System.err.println("Error: " + e.getMessage());
+            } catch (IndexOutOfBoundsException e) {System.err.println("Error: " + e.getMessage());
             }
 
             // Testing invalid inputs
-            try {
-                manager.addTask(null);
-            } catch (IllegalArgumentException e) {
-                System.err.println("Error: " + e.getMessage());
+            try {manager.addTask(null);
+            } catch (IllegalArgumentException e) {System.err.println("Error: " + e.getMessage());
             }
             try {
                 manager.searchTask("");
-            } catch (IllegalArgumentException e) {
-                System.err.println("Error:" + e.getMessage());
+            } catch (IllegalArgumentException e) {System.err.println("Error:" + e.getMessage());
             } catch (TaskNotFoundException e) {
                 throw new RuntimeException(e);
             }
             try {
                 manager.removeTask("Go to Market ");
-            } catch (IllegalArgumentException e) {
-                System.err.println("Error:" + e.getMessage());
+            } catch (IllegalArgumentException e) {System.err.println("Error:" + e.getMessage());
             } catch (TaskNotFoundException e) {
                 throw new RuntimeException(e);
             }
             try {
                 manager.getTaskByIndex(-1);
-            } catch (IndexOutOfBoundsException e) {
-                System.err.println("Error: " + e.getMessage());
+            } catch (IndexOutOfBoundsException e) {System.err.println("Error: " + e.getMessage());
             }
 
-        } finally {
-            System.out.println("All operations complete.");
+        } finally {System.out.println("All operations complete.");
         }
     }
 }
